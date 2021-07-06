@@ -1,0 +1,111 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: lightblue;
+}
+
+#app {
+  background-color: #ccc;
+  height: 70vh;
+  max-height: 500px;
+  width: 100vw;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 125px repeat(5, 1fr);
+  grid-template-areas:
+    "display display display display"
+    "operand operand operand operand"
+    "numeric1 numeric1 numeric1 equals"
+    "numeric2 numeric2 numeric2 equals"
+    "numeric3 numeric3 numeric3 equals"
+    "numeric4 numeric4 numeric4 equals";
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 15px 20px 5px #bbb;
+}
+
+.display {
+  grid-area: display;
+  background-color: black;
+  color: white;
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  padding-right: 20px;
+  font-size: 40px;
+}
+
+.operand {
+  grid-area: operand;
+  background-color: lightgrey;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.numeric1,
+.numeric2,
+.numeric3,
+.numeric4 {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.numeric1 {
+  grid-area: numeric1;
+}
+
+.numeric2 {
+  grid-area: numeric2;
+}
+
+.numeric3 {
+  grid-area: numeric3;
+}
+
+.numeric4 {
+  grid-area: numeric4;
+}
+
+.equals {
+  grid-area: equals;
+}
+
+.equals button {
+  background-color: coral;
+  border-bottom-right-radius: 20px;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+}
+
+.numeric4 :nth-child(1) {
+  border-bottom-left-radius: 20px;
+}
+
+button {
+  font-size: 25px;
+  border: 1px solid #ccc;
+}
+
+button:hover {
+  background-color: #ccc;
+}
